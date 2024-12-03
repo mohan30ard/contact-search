@@ -36,8 +36,8 @@
           </div>
         </div>
       </div>
+
       <div class="container-right">
-        <!-- Content for the right container -->
         <div class="form-row">
           <div class="form-group full-width">
             <label>Street address</label>
@@ -68,12 +68,10 @@
     <button type="submit" class="btn btn-primary">Search</button>
   </form>
 
+  <!-- Table Section -->
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-    <!-- checkbox column-->
     <ng-container matColumnDef="select">
-      <th mat-header-cell *matHeaderCellDef>
-      </th>
+      <th mat-header-cell *matHeaderCellDef> </th>
       <td mat-cell *matCellDef="let row">
         <mat-checkbox (change)="onRowSelected(row)" [checked]="selection.isSelected(row)">
         </mat-checkbox>

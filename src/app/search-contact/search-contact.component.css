@@ -113,3 +113,48 @@ table {
   display: none;
 }
 
+@media screen and (max-width: 768px) {
+  .form-container {
+    grid-template-columns: 1fr;
+    /* Stack the form fields on smaller screens */
+
+  }
+
+  .form-group {
+    width: 100%;
+    /* Make sure form inputs take up full width */
+  }
+
+  .container-left,
+  .container-right {
+    flex-direction: column;
+    /* Stack columns on mobile devices */
+  }
+
+  table {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  table th,
+  table td {
+    font-size: 14px;
+  }
+
+  mat-checkbox {
+    transform: scale(0.8);
+    /* Smaller checkboxes for smaller screens */
+  }
+}
+
+/* Pagination responsiveness */
+mat-paginator {
+  margin-top: 10px;
+}
