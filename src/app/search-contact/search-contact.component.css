@@ -1,22 +1,31 @@
 .form-container {
-  display: flex; /* Enables flex layout */
-  gap: 20px; /* Adds space between the two containers */
-  justify-content: space-between; /* Optional: Adjust alignment */
-  align-items: flex-start; /* Align items at the top */
-  flex-wrap: wrap; /* Ensures wrapping on smaller screens */
-  margin-bottom: 20px; /* Add spacing below the form */
+  display: flex;
+  /* Enables flex layout */
+  gap: 20px;
+  /* Adds space between the two containers */
+  justify-content: space-between;
+  /* Optional: Adjust alignment */
+  align-items: flex-start;
+  /* Align items at the top */
+  flex-wrap: wrap;
+  /* Ensures wrapping on smaller screens */
+  margin-bottom: 20px;
+  /* Add spacing below the form */
 }
 
 .container-left,
 .container-right {
   margin-left: 40px;
-  flex: 1; /* Ensures both containers take equal width */
-  min-width: 200px; /* Set minimum width for better responsiveness */
+  flex: 1;
+  /* Ensures both containers take equal width */
+  min-width: 200px;
+  /* Set minimum width for better responsiveness */
 }
 
 .container-left label,
 .container-right label {
-  display: block; /* Ensures the label appears above the input */
+  display: block;
+  /* Ensures the label appears above the input */
   margin-bottom: 8px;
   font-size: 14px;
 }
@@ -90,18 +99,17 @@
   margin-left: 40px;
 }
 
-.table {
+.btn:hover {
+  background-color: rgb(65, 148, 237);
+  color: white;
+}
+
+table {
   width: 100%;
-  border: 1px solid #ddd;
-  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-.table th,
-.table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+::ng-deep .mat-mdc-paginator-range-label {
+  display: none;
 }
 
-.table th {
-  background-color: #f9f9f9;
-}
