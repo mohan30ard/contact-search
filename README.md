@@ -2,8 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
 
-## Development server
+## Installation
+Install Node.js and npm: If you haven't already, download and install Node.js from https://nodejs.org.
 
+Install Angular CLI globally:
+
+run `npm install -g @angular/cli`
+
+## Clone Git Repository
+git clone `https://github.com/mohan30ard/contact-search`
+cd contact-search
+
+
+## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
