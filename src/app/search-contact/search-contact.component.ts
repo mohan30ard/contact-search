@@ -109,10 +109,33 @@ export class SearchContactComponent implements OnInit, AfterViewInit {
 
   selection = new SelectionModel<any>(true, []);
 
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.contacts.length;
-    return numSelected === numRows;
+  // isAllSelected() {
+  //   const numSelected = this.selection.selected.length;
+  //   const numRows = this.contacts.length;
+  //   return numSelected === numRows;
+  // }
+
+  onRowSelected(row: MockData) {
+    // Toggle the selection of the row
+    this.selection.toggle(row);
+
+    if (this.selection.isSelected(row)) {
+      // If selected, populate the form with the selected contact's data
+      this.contactForm.setValue({
+        firstName: row.FirstName,
+        lastName: row.LastName,
+        dob: row.DOB,
+        email: row.Email,
+        phone: row.Phone,
+        street: row.Address,  // Assuming Address is the street
+        city: row.City,
+        state: row.State,
+        zip: row.Zip
+      });
+    } else {
+      // If unselected, clear the form fields
+      this.contactForm.reset();
+    }
   }
 
   onSearch() {
