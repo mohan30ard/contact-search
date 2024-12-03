@@ -7,60 +7,14 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { Validators } from '@angular/forms';
-
-export interface MockData {
-  FirstName: string;
-  LastName: string;
-  DOB: string;
-  Address: string;
-  City: string;
-  State: string;
-  Zip: string;
-  Email: string;
-  Phone: string;
-}
+import { ContactModel } from '../models/contactModel';
+import { ELEMENT_DATA } from '../../../public/mock-data/mock-data';
 
 export class CustomPaginatorIntl extends MatPaginatorIntl {
   // Override method for range label to hide it
 
   override getRangeLabel = (page: number, pageSize: number, length: number): string => '';
 }
-
-export const ELEMENT_DATA: MockData[] = [
-  {
-    FirstName: 'John',
-    LastName: 'Doe',
-    DOB: '1985-06-15',
-    Address: '123 Elm Street',
-    City: 'Springfield',
-    State: 'IL',
-    Zip: '62704',
-    Email: 'johndoe@example.com',
-    Phone: '(555) 123-4567',
-  },
-  {
-    FirstName: 'Jane',
-    LastName: 'Smith',
-    DOB: '1990-08-22',
-    Address: '456 Oak Avenue',
-    City: 'Madison',
-    State: 'WI',
-    Zip: '53703',
-    Email: 'janesmith@example.com',
-    Phone: '(555) 987-6543',
-  },
-  {
-    FirstName: 'Bob',
-    LastName: 'Johnson',
-    DOB: '1978-12-05',
-    Address: '789 Pine Road',
-    City: 'Chicago',
-    State: 'IL',
-    Zip: '60614',
-    Email: 'bobjohnson@example.com',
-    Phone: '(555) 654-3210',
-  }
-];
 
 @Component({
   selector: 'app-search-contact',
@@ -72,13 +26,13 @@ export const ELEMENT_DATA: MockData[] = [
 export class SearchContactComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['select', 'Name', 'DOB', 'Address', 'City', 'State', 'Zip', 'Email', 'Phone'];
   contactForm: FormGroup;
-  contacts: MockData[] = [];
+  contacts: ContactModel[] = [];
   states = ['AK', 'CA', 'NY', 'TX', 'WA', 'ON', 'IL', 'WI', 'FL', 'MI'];
 
   // Define the paginator here
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
 
-  dataSource: MatTableDataSource<MockData> = new MatTableDataSource<MockData>();
+  dataSource: MatTableDataSource<ContactModel> = new MatTableDataSource<ContactModel>();
    lastName: string ='';
 
   constructor(private fb: FormBuilder) {
@@ -115,7 +69,7 @@ export class SearchContactComponent implements OnInit, AfterViewInit {
   //   return numSelected === numRows;
   // }
 
-  onRowSelected(row: MockData) {
+  onRowSelected(row: ContactModel) {
     // Toggle the selection of the row
     this.selection.toggle(row);
 
