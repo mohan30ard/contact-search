@@ -1,0 +1,107 @@
+.form-container {
+  display: flex; /* Enables flex layout */
+  gap: 20px; /* Adds space between the two containers */
+  justify-content: space-between; /* Optional: Adjust alignment */
+  align-items: flex-start; /* Align items at the top */
+  flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+  margin-bottom: 20px; /* Add spacing below the form */
+}
+
+.container-left,
+.container-right {
+  margin-left: 40px;
+  flex: 1; /* Ensures both containers take equal width */
+  min-width: 200px; /* Set minimum width for better responsiveness */
+}
+
+.container-left label,
+.container-right label {
+  display: block; /* Ensures the label appears above the input */
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.container-left input:focus,
+.container-right input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 150px;
+  margin: 2px;
+}
+
+/* Ensure only the street address input spans the full width */
+.container-right .form-group.full-width input {
+  max-width: 64%;
+}
+
+/* Ensure the full-width class is applied properly */
+.form-group.full-width {
+  width: 100%;
+}
+
+.form-group input[type="date"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #333;
+}
+
+.form-group input[type="date"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.required {
+  color: red;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: white;
+  color: rgb(65, 148, 237);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+.table {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #f9f9f9;
+}
